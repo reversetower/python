@@ -1,0 +1,17 @@
+<!-- index.html -->
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}UDN即時新聞{% endblock %}
+{% block headmessage %}
+    <h3 style='font-family:微軟正黑體;'>產經新聞列表</h3>
+	<h5 style='font-family:微軟正黑體;'>最新更新時間：{{now}}</h5>
+{% endblock %}
+{% block content %}
+    <h5 style='font-family:微軟正黑體;'>共有 {{newsNum}} 筆新聞</h5>
+    {% for news in newsList %}
+	<hr>
+    <h2>{{news.title}}<br></h2>
+	    {{news.paragraph}}<br>
+		<a href='{{news.url}}'>more...</a>
+        {% endfor %}
+{% endblock %}
